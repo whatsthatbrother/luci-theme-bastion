@@ -1,0 +1,411 @@
+/*
+ * Bastion - a LuCI theme layered on top of luci-theme-bootstrap.
+ * Loaded after /luci-static/bootstrap/cascade.css.
+ * Licensed under the Apache License 2.0.
+ */
+
+:root {
+	--bs-side: #1f2a30;
+	--bs-side-hover: #26343b;
+	--bs-side-active: #2a3940;
+	--bs-side-line: #2c3a42;
+	--bs-accent: #2e9e5b;
+	--bs-accent-dark: #1f7a45;
+	--bs-bg: #eef1f3;
+	--bs-card: #ffffff;
+	--bs-card-head: #f7f9fa;
+	--bs-line: #d9dee2;
+	--bs-text: #27323a;
+	--bs-muted: #6b7780;
+	--bs-w: 210px;
+	--bs-top: 44px;
+}
+
+/* ---------- base ---------- */
+
+body.bastion {
+	background: var(--bs-bg);
+	color: var(--bs-text);
+	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 13px;
+}
+
+body.bastion a { color: var(--bs-accent-dark); }
+
+body.bastion #maincontent h2 {
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 0 14px;
+	padding: 0;
+	border: 0;
+	color: var(--bs-text);
+}
+
+/* ---------- cards ---------- */
+
+body.bastion .cbi-section {
+	background: var(--bs-card);
+	border: 1px solid var(--bs-line);
+	border-radius: 4px;
+	padding: 0 14px 12px;
+	margin: 0 0 16px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+body.bastion .cbi-section > .cbi-title,
+body.bastion .cbi-section > h3,
+body.bastion .cbi-section > legend {
+	margin: 0 -14px 12px;
+	padding: 9px 14px;
+	border-bottom: 1px solid var(--bs-line);
+	background: var(--bs-card-head);
+	border-radius: 4px 4px 0 0;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.4;
+	width: auto;
+}
+
+body.bastion .cbi-title h3 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+body.bastion .cbi-section .cbi-section {
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+	margin-bottom: 8px;
+}
+
+body.bastion .cbi-section-descr { color: var(--bs-muted); }
+
+/* ---------- tables ---------- */
+
+body.bastion .table .th,
+body.bastion .table th {
+	background: var(--bs-card-head);
+	font-weight: 600;
+	color: var(--bs-muted);
+	font-size: 12px;
+}
+
+body.bastion .table .td,
+body.bastion .table td,
+body.bastion .table .th,
+body.bastion .table th {
+	border-color: var(--bs-line);
+}
+
+/* ---------- controls ---------- */
+
+body.bastion .btn,
+body.bastion .cbi-button {
+	border-radius: 3px;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+body.bastion .cbi-button-apply,
+body.bastion .cbi-button-positive,
+body.bastion .cbi-button-save,
+body.bastion .btn.primary,
+body.bastion .cbi-button-action.important {
+	background: var(--bs-accent);
+	border-color: var(--bs-accent);
+	color: #fff;
+}
+
+body.bastion input:focus,
+body.bastion select:focus,
+body.bastion textarea:focus,
+body.bastion .cbi-dropdown:focus {
+	border-color: var(--bs-accent);
+	box-shadow: 0 0 0 2px rgba(46, 158, 91, .2);
+	outline: 0;
+}
+
+body.bastion .cbi-progressbar {
+	border: 0;
+	border-radius: 3px;
+	background: #e6eaed;
+}
+
+body.bastion .cbi-progressbar > div {
+	background: var(--bs-accent);
+	border-radius: 3px;
+}
+
+body.bastion .ifacebox {
+	border: 1px solid var(--bs-line);
+	border-radius: 4px;
+	box-shadow: none;
+	background: #fff;
+}
+
+body.bastion .ifacebox .ifacebox-head {
+	background: var(--bs-card-head);
+	border-bottom: 1px solid var(--bs-line);
+}
+
+body.bastion .ifacebox .ifacebox-head:not([style]) { color: var(--bs-text); }
+
+body.bastion .ifacebox .ifacebox-head.active {
+	background: var(--bs-accent);
+	border-bottom-color: var(--bs-accent);
+	color: #fff;
+}
+
+body.bastion .cbi-tabmenu > li.cbi-tab,
+body.bastion #tabmenu .tabs > li.active {
+	border-bottom: 2px solid var(--bs-accent);
+}
+
+body.bastion .cbi-tabmenu > li.cbi-tab > a,
+body.bastion #tabmenu .tabs > li.active > a {
+	color: var(--bs-text);
+	font-weight: 600;
+}
+
+/* ---------- header colours (all widths) ---------- */
+
+body.bastion header {
+	background: var(--bs-side);
+	box-shadow: none;
+}
+
+body.bastion header .brand {
+	background: var(--bs-accent);
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	letter-spacing: .3px;
+	text-shadow: none;
+}
+
+body.bastion header .brand:hover {
+	background: var(--bs-accent-dark);
+	color: #fff;
+}
+
+body.bastion footer {
+	color: var(--bs-muted);
+	border-top: 0;
+	font-size: 12px;
+}
+
+/* ---------- login ---------- */
+
+body.bastion.bs-blank { background: var(--bs-side); }
+
+body.bastion #modal_overlay > .modal.login {
+	border: 0;
+	border-top: 4px solid var(--bs-accent);
+	border-radius: 4px;
+	max-width: 380px;
+	margin-top: 12vh;
+	padding: 20px 24px 16px;
+	background: #fff;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+}
+
+body.bastion #modal_overlay > .modal.login h4 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 14px;
+}
+
+body.bastion #modal_overlay > .modal.login .cbi-section {
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* ---------- sidebar layout (desktop / tablet) ---------- */
+
+@media screen and (min-width: 768px) {
+	body.bastion {
+		padding: 0;
+		margin: 0;
+	}
+
+	/* top bar */
+	body.bastion:not(.bs-blank)::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: var(--bs-w);
+		right: 0;
+		height: var(--bs-top);
+		background: #fff;
+		border-bottom: 1px solid var(--bs-line);
+		z-index: 790;
+	}
+
+	body.bastion header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: var(--bs-w);
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: #3a4a53 transparent;
+		z-index: 800;
+	}
+
+	body.bastion header .brand {
+		display: flex;
+		align-items: center;
+		flex: none;
+		float: none;
+		height: var(--bs-top);
+		padding: 0 16px;
+		margin: 0;
+		line-height: 1;
+	}
+
+	body.bastion header .brand::before {
+		content: "";
+		width: 12px;
+		height: 12px;
+		margin-right: 12px;
+		border: 2px solid #fff;
+		border-radius: 3px;
+		transform: rotate(45deg);
+	}
+
+	body.bastion #topmenu {
+		display: block;
+		float: none;
+		flex: 1;
+		width: 100%;
+		margin: 8px 0;
+		padding: 0;
+	}
+
+	body.bastion #topmenu > li {
+		float: none;
+		display: block;
+		position: static;
+		margin: 0;
+	}
+
+	/* group headings */
+	body.bastion #topmenu > li > a {
+		display: block;
+		float: none;
+		padding: 10px 16px 6px;
+		color: #8fa0aa;
+		font-weight: 600;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: .8px;
+		background: none;
+		text-shadow: none;
+		cursor: default;
+	}
+
+	body.bastion #topmenu > li > a::after,
+	body.bastion #topmenu > li > a::before {
+		display: none;
+	}
+
+	/* top-level entries without children, e.g. Log out */
+	body.bastion #topmenu > li:not(.dropdown) > a {
+		margin-top: 8px;
+		padding-top: 12px;
+		border-top: 1px solid var(--bs-side-line);
+		color: #c9d3d9;
+		cursor: pointer;
+	}
+
+	body.bastion #topmenu > li:not(.dropdown) > a:hover { color: #fff; }
+
+	body.bastion #topmenu .dropdown-menu {
+		display: block;
+		position: static;
+		float: none;
+		width: auto;
+		min-width: 0;
+		max-width: none;
+		margin: 0;
+		padding: 0 0 4px;
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+
+	body.bastion #topmenu .dropdown-menu li {
+		float: none;
+		display: block;
+		margin: 0;
+	}
+
+	body.bastion #topmenu .dropdown-menu a {
+		display: block;
+		padding: 7px 16px 7px 24px;
+		color: #c9d3d9;
+		font-size: 13px;
+		border-left: 3px solid transparent;
+		background: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-shadow: none;
+	}
+
+	body.bastion #topmenu .dropdown-menu a:hover {
+		background: var(--bs-side-hover);
+		color: #fff;
+	}
+
+	body.bastion #topmenu .dropdown-menu a.bs-active {
+		background: var(--bs-side-active);
+		color: #fff;
+		border-left-color: var(--bs-accent);
+	}
+
+	body.bastion #indicators {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: var(--bs-top);
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		float: none;
+		margin: 0;
+		padding: 0 16px;
+		z-index: 801;
+	}
+
+	body.bastion #maincontent {
+		box-sizing: border-box;
+		width: auto;
+		max-width: none;
+		min-width: 0;
+		margin: 0 0 0 var(--bs-w);
+		padding: calc(var(--bs-top) + 16px) 20px 8px;
+	}
+
+	body.bastion footer {
+		box-sizing: border-box;
+		width: auto;
+		margin: auto 0 0 var(--bs-w);
+		padding: 8px 20px 4px;
+	}
+}
