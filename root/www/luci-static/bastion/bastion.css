@@ -30,7 +30,10 @@ body.bastion {
 	font-size: 13px;
 }
 
-body.bastion a { color: var(--bs-accent-dark); }
+:where(body.bastion #maincontent) a,
+:where(body.bastion footer) a {
+	color: var(--bs-accent-dark);
+}
 
 body.bastion #maincontent h2 {
 	font-size: 18px;
@@ -186,6 +189,12 @@ body.bastion header .brand {
 	letter-spacing: .3px;
 	text-shadow: none;
 }
+
+body.bastion header a { text-shadow: none; }
+
+body.bastion #topmenu > li > a { color: #c9d3d9; }
+
+body.bastion #topmenu > li > a:hover { color: #fff; }
 
 body.bastion header .brand:hover {
 	background: var(--bs-accent-dark);

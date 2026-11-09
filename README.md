@@ -5,7 +5,7 @@ card-style sections. It is a thin layer on top of the stock
 `luci-theme-bootstrap`: Bootstrap's stylesheet is loaded first and
 `bastion.css` restyles it.
 
-Developed against OpenWrt 25.12 (Cudy WR3000 v1). Early version: the stylesheet has been checked on a live LuCI, the templates and login page have not been tested on a router yet.
+Developed against OpenWrt 25.12 (Cudy WR3000 v1). Early version: installed and working on that router; the login page has not been checked yet.
 
 ## Requirements
 
@@ -23,6 +23,14 @@ ssh root@<router-ip> "sh /tmp/luci-theme-bastion/install.sh"
 ```
 
 Reload LuCI with Ctrl+F5. Nothing is restarted.
+
+## Update
+
+After the first install, pull the latest files straight from GitHub on the router:
+
+```
+ssh root@<router-ip> "wget -qO- https://raw.githubusercontent.com/whatsthatbrother/luci-theme-bastion/main/update.sh | sh"
+```
 
 ## Switch back / uninstall
 
